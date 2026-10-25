@@ -1,0 +1,149 @@
+/* gen-container */
+.gen-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gen-container .hero-section {
+  display: flex;
+  gap: 10px;
+}
+
+.create-header {
+  padding: 1rem 0;
+  border-bottom: 2px solid #e5e4e7;
+}
+
+.create-header h1 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.create-header p {
+  font-size: 0.85rem;
+  font-weight: lighter;
+}
+
+/* Generate Form */
+.create-paper-form {
+  max-width: 500px;
+  width: 350px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  font-family: Arial, sans-serif;
+}
+
+.create-paper-form h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.create-paper-form label {
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.create-paper-form input,
+.create-paper-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 0.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-sizing: border-box
+}
+
+.create-paper-form .difficulty-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.create-paper-form .difficulty-group h4 {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.create-paper-form .difficulty-group div {
+  display: flex;
+  height: fit-content;
+  color: #434343;
+}
+
+.create-paper-form .difficulty-group div label {
+  cursor: pointer;
+}
+
+.create-paper-form .difficulty-group div input {
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* Preview Section */
+.preview-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e4e7;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  padding: 1rem;
+}
+
+.preview-section h3 {
+  font-size: 1.25rem;
+}
+
+.preview-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 0.25rem;
+}
+
+.preview-box label {
+  font-size: 1.05rem;
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.preview-box h3 {
+  font-weight: 400;
+  align-self: center;
+}
+
+.preview-box h1 {
+  font-size: 1.05rem;
+  font-weight: lighter;
+}
+
+.preview-action {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.preview-action .add-btn {
+  width: 20%;
+  font-size: 1rem;
+}
+
+.preview-action .clear-btn {
+  background-color: #fff;
+  border: 2px solid #d1d5db;
+  color: rgba(170, 59, 255, 0.968);
+  font-weight: 600;
+}
+
+.preview-action .clear-btn:hover {
+  background-color: rgba(170, 59, 255, 0.968);
+  color: #000;
+  font-weight: 500;
+}

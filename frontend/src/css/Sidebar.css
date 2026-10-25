@@ -1,0 +1,100 @@
+.sidebar-container {
+  width: 230px;
+  min-width: 230px;
+  max-width: 230px;
+  flex: 0 0 250px;
+
+  height: 100vh;
+  position: relative;
+  top: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  border-right: 5px solid #e5e7eb;
+}
+
+
+.sidebar-header {
+  padding: 10px 8px;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.sidebar-header h1 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 800;
+  color: rgba(170, 59, 255, 0.968);
+}
+
+.sidebar-header p {
+  font-size: 0.65rem;
+  font-weight: lighter;
+  text-align: end;
+  margin-right: 1.3rem;
+}
+
+.sidebar-header sup {
+  color: black;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+}
+
+.sidebar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  margin: 1rem 0;
+  color: rgba(170, 59, 255, 0.968);
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #e5e4e7;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:nth-child(1) svg,
+.sidebar-link:nth-child(2) svg,
+.sidebar-link:nth-child(3) svg {
+  color: black;
+}
+
+.sidebar-links a:hover {
+  background-color: rgba(150, 31, 241, 0.5);
+  color: white;
+}
+
+.sidebar-links a.active {
+  background-color: rgba(170, 59, 255, 0.968);
+  color: #fff;
+  font-weight: 600;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    flex-basis: 200px;
+    padding: 20px 12px;
+  }
+
+  .sidebar-header h1 {
+    font-size: 23px;
+  }
+}

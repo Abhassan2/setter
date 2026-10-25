@@ -1,0 +1,265 @@
+.docs-page {
+  --border: #e8e8ee;
+  --muted: #8a8a98;
+
+  min-height: 100vh;
+  color: #15151f;
+}
+
+.docs-container {
+  max-width: 760px;
+  padding: 35px 24px;
+}
+
+/* Header */
+.docs-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.docs-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.docs-header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Buttons */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.icon-button:hover:not(:disabled) {
+  background: #eeeefb;
+  color: var(--accent);
+}
+
+.icon-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.text-button {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+/* Search */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 0 16px;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: #a5a5b3;
+  box-shadow: 0 1px 2px rgba(20, 20, 40, 0.04);
+  transition: border-color 0.15s, box-shadow 0.15s, color 0.15s;
+}
+
+.search:focus-within {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  color: #15151f;
+}
+
+.search input::placeholder {
+  color: #a5a5b3;
+}
+
+/* Card + list */
+.docs-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(20, 20, 40, 0.05);
+  overflow: hidden;
+}
+
+.docs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.doc-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-right: 12px;
+  border-bottom: 1px solid #f1f1f6;
+  transition: background 0.15s;
+}
+
+.doc-row:last-child {
+  border-bottom: none;
+}
+
+.doc-row:hover {
+  background: #fafafe;
+}
+
+.doc-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+  padding: 14px 8px 14px 18px;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.doc-main:hover {
+  background: none;
+}
+
+.doc-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #f1f1f6;
+  color: rgba(170, 59, 255, 0.968);
+}
+
+.tone-image {
+  background: #e8f1ff;
+}
+
+.tone-default {
+  background: #f1f1f6;
+  color: #6b6b7b;
+}
+
+.doc-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+  color: #15151f;
+}
+
+.doc-name {
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #15151f;
+}
+
+.doc-main:hover .doc-name {
+  color: #15151f;
+}
+
+.doc-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.doc-badge {
+  flex-shrink: 0;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #f1f1f6;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b6b7b;
+}
+
+/* States */
+.empty {
+  padding: 64px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.empty p {
+  margin: 0 0 12px;
+}
+
+.skeleton-row {
+  height: 69px;
+  border-bottom: 1px solid #f1f1f6;
+  background: linear-gradient(90deg, #fafafe, #f1f1f8, #fafafe);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .docs-container {
+    padding: 32px 16px;
+  }
+
+  .doc-badge {
+    display: none;
+  }
+}
