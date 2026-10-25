@@ -2,13 +2,11 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import connectDB from "./config/db.js";
-import geminiAi from "./config/ai.js";
-import generate from "./config/nvidia.js";
 import {
   historyOfQuestions,
   saveQuestions,
 } from "./controller/questionController.js";
-import { fetchDocument, saveDocument, fetchSig } from "./controller/pdfController.js";
+import { fetchDocument, saveDocument, fetchSig } from "./controller/documentController.js";
 
 
 const app = express();
