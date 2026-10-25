@@ -21,18 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get("/", async (req, res) => {
-  const data = {
-    number: "2",
-    subject: "data structure & algorithum",
-    topic: "queue",
-    type: "Short Answer",
-    difficulty: "easy",
-  };
-  // const result = await geminiAi(data);
-  const response = await generate(data);
-  const result = JSON.parse(response);
-  console.log("Task Done!!");
-  console.log(result);
   res.send("Server is running");
 });
 
