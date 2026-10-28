@@ -134,7 +134,6 @@ function PaperLayout() {
   return (
     <div className="paper-layout-page">
       <h1 className="layout-heading">Paper Layout</h1>
-      <hr />
 
       <div className="paper-layout-grid">
         {/* LEFT: layout options */}

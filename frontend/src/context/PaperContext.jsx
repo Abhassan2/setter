@@ -30,6 +30,15 @@ export function PaperProvider({ children }) {
   );
   const [history, setHistory] = useState([]);
   const [toast, setToast] = useState(null);
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDark((prev) => !prev);
+  };
+
+  useEffect(() => {
+    document.body.classList.toggle("dark-theme", isDark);
+  }, [isDark]);
 
   useEffect(() => {
     localStorage.setItem("generated", JSON.stringify(generated));
@@ -90,7 +99,9 @@ export function PaperProvider({ children }) {
 
   const uploadDocument = async (file) => {
     try {
-      const sig = await fetch(`${config.API_URL}/upload-signature`).then((r) => r.json());
+      const sig = await fetch(`${config.API_URL}/upload-signature`).then((r) =>
+        r.json(),
+      );
 
       const formData = new FormData();
       formData.append("file", file);
@@ -98,22 +109,22 @@ export function PaperProvider({ children }) {
       formData.append("timestamp", sig.timestamp);
       formData.append("signature", sig.signature);
       formData.append("folder", sig.folder);
-      
-      // upload file 
+
+      // upload file
       const cloudRes = await fetch(
         `https://api.cloudinary.com/v1_1/${sig.cloudName}/auto/upload`,
         { method: "POST", body: formData },
       );
       const data = await cloudRes.json();
       if (!cloudRes.ok) throw new Error(data.error?.message || "Upload failed");
-      
+
       // save url in database
-      const saveRes = await axios.post(`${config.API_URL}/save-document`,{
+      const saveRes = await axios.post(`${config.API_URL}/save-document`, {
         name: data.original_filename,
         format: data.format,
         size: data.size,
         publicId: data.public_id,
-        url: data.secure_url
+        url: data.secure_url,
       });
 
       showToast(saveRes.data.message, "success");
@@ -121,7 +132,7 @@ export function PaperProvider({ children }) {
       console.log(error);
     }
   };
-  
+
   const value = useMemo(
     () => ({
       history,
@@ -139,6 +150,8 @@ export function PaperProvider({ children }) {
       removeFromPaper,
       showToast,
       uploadDocument,
+      isDark,
+      toggleTheme,
     }),
     [
       isLoading,
@@ -155,6 +168,8 @@ export function PaperProvider({ children }) {
       setToast,
       showToast,
       uploadDocument,
+      isDark,
+      toggleTheme,
     ],
   );
 

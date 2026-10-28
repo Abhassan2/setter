@@ -1,9 +1,6 @@
 .docs-page {
-  --border: #e8e8ee;
-  --muted: #8a8a98;
-
   min-height: 100vh;
-  color: #15151f;
+  color: var(--text);
 }
 
 .docs-container {
@@ -29,7 +26,7 @@
 .docs-header p {
   margin: 4px 0 0;
   font-size: 14px;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 /* Buttons */
@@ -39,17 +36,19 @@
   justify-content: center;
   width: 34px;
   height: 34px;
+  margin-top: 0;
+  padding: 0;
   border: none;
   border-radius: 10px;
   background: transparent;
-  color: var(--muted);
+  color: var(--text-muted);
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s, color 0.15s;
 }
 
 .icon-button:hover:not(:disabled) {
-  background: #eeeefb;
+  background: var(--accent-soft);
   color: var(--accent);
 }
 
@@ -59,6 +58,7 @@
 }
 
 .text-button {
+  margin-top: 0;
   border: none;
   background: none;
   padding: 0;
@@ -69,7 +69,9 @@
   cursor: pointer;
 }
 
-.text-button:hover {
+.text-button:hover:not(:disabled) {
+  background: none;
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -83,16 +85,16 @@
   height: 46px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: #fff;
-  color: #a5a5b3;
-  box-shadow: 0 1px 2px rgba(20, 20, 40, 0.04);
+  background: var(--surface);
+  color: var(--text-muted);
+  box-shadow: 0 1px 2px var(--shadow);
   transition: border-color 0.15s, box-shadow 0.15s, color 0.15s;
 }
 
 .search:focus-within {
   border-color: var(--accent);
   color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .search input {
@@ -102,19 +104,19 @@
   background: transparent;
   font: inherit;
   font-size: 15px;
-  color: #15151f;
+  color: var(--text);
 }
 
 .search input::placeholder {
-  color: #a5a5b3;
+  color: var(--text-muted);
 }
 
 /* Card + list */
 .docs-card {
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 4px 24px rgba(20, 20, 40, 0.05);
+  background: var(--surface);
+  box-shadow: 0 4px 24px var(--shadow);
   overflow: hidden;
 }
 
@@ -129,7 +131,7 @@
   align-items: center;
   gap: 4px;
   padding-right: 12px;
-  border-bottom: 1px solid #f1f1f6;
+  border-bottom: 1px solid var(--border);
   transition: background 0.15s;
 }
 
@@ -138,7 +140,7 @@
 }
 
 .doc-row:hover {
-  background: #fafafe;
+  background: var(--bg-soft);
 }
 
 .doc-main {
@@ -149,15 +151,18 @@
   min-width: 0;
   padding: 14px 8px 14px 18px;
   border: none;
+  border-radius: 0;
   background: none;
+  color: var(--text);
   font: inherit;
   text-align: left;
   cursor: pointer;
   margin-top: 0;
 }
 
-.doc-main:hover {
+.doc-main:hover:not(:disabled) {
   background: none;
+  color: var(--text);
 }
 
 .doc-icon {
@@ -168,17 +173,17 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: #f1f1f6;
-  color: rgba(170, 59, 255, 0.968);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .tone-image {
-  background: #e8f1ff;
+  background: var(--accent-soft);
 }
 
 .tone-default {
-  background: #f1f1f6;
-  color: #6b6b7b;
+  background: var(--surface-2);
+  color: var(--text-muted);
 }
 
 .doc-text {
@@ -187,7 +192,7 @@
   gap: 3px;
   flex: 1;
   min-width: 0;
-  color: #15151f;
+  color: var(--text);
 }
 
 .doc-name {
@@ -196,28 +201,28 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #15151f;
+  color: var(--text);
 }
 
 .doc-main:hover .doc-name {
-  color: #15151f;
+  color: var(--text);
 }
 
 .doc-meta {
   font-size: 12px;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .doc-badge {
   flex-shrink: 0;
   padding: 3px 9px;
   border-radius: 999px;
-  background: #f1f1f6;
+  background: var(--surface-2);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #6b6b7b;
+  color: var(--text-muted);
 }
 
 /* States */
@@ -225,7 +230,7 @@
   padding: 64px 0;
   text-align: center;
   font-size: 14px;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .empty p {
@@ -234,8 +239,13 @@
 
 .skeleton-row {
   height: 69px;
-  border-bottom: 1px solid #f1f1f6;
-  background: linear-gradient(90deg, #fafafe, #f1f1f8, #fafafe);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(
+    90deg,
+    var(--bg-soft),
+    var(--surface-2),
+    var(--bg-soft)
+  );
   background-size: 200% 100%;
   animation: shimmer 1.4s infinite;
 }

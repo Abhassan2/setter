@@ -2,7 +2,7 @@
   width: 230px;
   min-width: 230px;
   max-width: 230px;
-  flex: 0 0 250px;
+  flex: 0 0 230px;
 
   height: 100vh;
   position: relative;
@@ -10,26 +10,42 @@
   overflow-y: auto;
   box-sizing: border-box;
 
-  background-color: #ffffff;
+  background-color: var(--surface);
+  color: var(--text);
   display: flex;
   flex-direction: column;
   padding: 10px 15px;
-  border-right: 5px solid #e5e7eb;
+  border-right: 5px solid var(--border);
 }
-
 
 .sidebar-header {
   padding: 10px 8px;
-  background-color: #f9fafb;
+  background-color: var(--bg-soft);
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.sidebar-header img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.sidebar-header img:hover {
+  border: 1px solid var(--border);
 }
 
 .sidebar-header h1 {
   margin: 0;
   font-size: 27px;
   font-weight: 800;
-  color: rgba(170, 59, 255, 0.968);
+  color: var(--accent);
 }
 
 .sidebar-header p {
@@ -37,10 +53,11 @@
   font-weight: lighter;
   text-align: end;
   margin-right: 1.3rem;
+  color: var(--text-muted);
 }
 
 .sidebar-header sup {
-  color: black;
+  color: var(--text);
   font-size: 10px;
   font-weight: 500;
 }
@@ -59,30 +76,46 @@
   gap: 12px;
   padding: 12px 15px;
   margin: 1rem 0;
-  color: rgba(170, 59, 255, 0.968);
+  color: var(--accent);
   text-decoration: none;
   border-radius: 8px;
-  border: 1px solid #e5e4e7;
+  border: 1px solid var(--border);
   transition: all 0.2s ease;
 }
 
 .sidebar-link:nth-child(1) svg,
 .sidebar-link:nth-child(2) svg,
 .sidebar-link:nth-child(3) svg {
-  color: black;
+  color: var(--text);
 }
 
+/* hover and active: fixed from ".sidebar-links a" to ".sidebar-link" */
+.sidebar-link:hover,
 .sidebar-links a:hover {
   background-color: rgba(150, 31, 241, 0.5);
-  color: white;
+  color: #fff;
 }
 
+.sidebar-link:hover svg,
+.sidebar-links a:hover svg {
+  color: #fff;
+}
+
+.sidebar-link.active,
 .sidebar-links a.active {
   background-color: rgba(170, 59, 255, 0.968);
   color: #fff;
   font-weight: 600;
 }
 
+.sidebar-link.active svg,
+.sidebar-links a.active svg {
+  color: #fff;
+}
+
+.theme-action {
+  margin-top: auto;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

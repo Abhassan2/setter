@@ -1,49 +1,58 @@
-/* :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f9fafb;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --border: #e5e7eb;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --accent-contrast: #ffffff;
+  --accent-soft: #eef2ff;
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+  --shadow: rgba(0, 0, 0, 0.08);
+  color-scheme: light;
 
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --btn-bg: rgba(170, 59, 255, 0.968);
+  --btn-bg-hover: rgba(185, 107, 244, 0.968);
+  --btn-text: #111827;
+  --btn-text-hover: #111827;
 }
-*/
+
+.dark-theme {
+  --bg: #0f172a;
+  --bg-soft: #111c33;
+  --surface: #1e293b;
+  --surface-2: #172033;
+  --border: #334155;
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+  --accent-contrast: #0f172a;
+  --accent-soft: #272e55;
+  --danger: #f87171;
+  --danger-soft: #3b1d22;
+  --shadow: rgba(0, 0, 0, 0.5);
+  color-scheme: dark; /* dark scrollbars, inputs, date pickers */
+
+  --btn-bg: rgba(170, 59, 255, 0.968);
+  --btn-bg-hover: rgba(196, 140, 250, 0.968);
+  --btn-text: #ffffff;
+  --btn-text-hover: #0f172a;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  font-family: -apple-system, "Inter", "Segoe UI", sans-serif;
 }
 
-html,
-body,
-#root {
+body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
 }
 
 h1 {
@@ -52,25 +61,28 @@ h1 {
 
 button {
   margin-top: 2rem;
-  background-color: rgba(170, 59, 255, 0.968);
-  color: white;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   padding: 8px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
-button:hover {
-  background-color: rgba(185, 107, 244, 0.968);
-  color: black;
+button:hover:not(:disabled) {
+  background-color: var(--btn-bg-hover);
+  color: var(--btn-text-hover);
 }
 
 button:disabled {
-  background-color: rgba(185, 107, 244, 0.968);
-  color: #000;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
   font-weight: 600;
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
 /* App */

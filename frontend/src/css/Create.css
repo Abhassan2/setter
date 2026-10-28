@@ -12,7 +12,7 @@
 
 .create-header {
   padding: 1rem 0;
-  border-bottom: 2px solid #e5e4e7;
+  border-bottom: 1px solid var(--border);
 }
 
 .create-header h1 {
@@ -24,6 +24,7 @@
 .create-header p {
   font-size: 0.85rem;
   font-weight: lighter;
+  color: var(--text-muted);
 }
 
 /* Generate Form */
@@ -31,9 +32,10 @@
   max-width: 500px;
   width: 350px;
   padding: 20px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background-color: #f9fafb;
+  background: var(--bg-soft);
+  
   font-family: Arial, sans-serif;
 }
 
@@ -55,9 +57,11 @@
   width: 100%;
   padding: 8px;
   margin-top: 0.25rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  box-sizing: border-box
+  box-sizing: border-box;
+  background: var(--surface);
+  
 }
 
 .create-paper-form .difficulty-group {
@@ -74,7 +78,7 @@
 .create-paper-form .difficulty-group div {
   display: flex;
   height: fit-content;
-  color: #434343;
+  color: var(--text-muted);
 }
 
 .create-paper-form .difficulty-group div label {
@@ -91,9 +95,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e5e4e7;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background-color: #f9fafb;
+  background-color: var(--bg-soft);
+  
   padding: 1rem;
 }
 
@@ -136,14 +141,14 @@
 }
 
 .preview-action .clear-btn {
-  background-color: #fff;
-  border: 2px solid #d1d5db;
-  color: rgba(170, 59, 255, 0.968);
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+  color: var(--accent);
   font-weight: 600;
 }
 
 .preview-action .clear-btn:hover {
-  background-color: rgba(170, 59, 255, 0.968);
-  color: #000;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
   font-weight: 500;
 }
