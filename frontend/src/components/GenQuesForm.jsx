@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Create.css";
 import config from "../config.js";
 import axios from "axios";
@@ -15,32 +15,21 @@ function GenQuesForm() {
   } = usePaper();
   const hasQuestions = generated?.items?.length > 0;
 
-  const controllerRef = useRef(null);
-
   const [subject, setSubject] = useState("Data Structures & Algorithum");
   const [topic, setTopic] = useState("");
   const [difficulty, setDifficulty] = useState(null);
   const [number, setNumber] = useState("1");
   const [type, setType] = useState("Very Short Answer");
 
-  useEffect(() => {
-    return () => controllerRef.current?.abort();
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    controllerRef.current = new AbortController();
     const data = { subject, difficulty, type, topic, number };
 
     try {
       setIsLoading(true);
       const response = await axios.post(
         `${config.API_URL}/generate-newQuestion`,
-        data,
-        {
-          signal: controllerRef.current.signal,
-          timeout: 120000,
-        },
+        data
       );
 
       if (response.data.success) {
@@ -62,7 +51,6 @@ function GenQuesForm() {
       }
     } finally {
       setIsLoading(false);
-      controllerRef.current = null;
     }
   };
 

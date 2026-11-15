@@ -17,7 +17,7 @@ const generate = async (data) => {
     Question Type: ${data.type}
     Difficulty Level: ${data.difficulty}
 
-    Ensure each question is accurate, clear, non-repetitive, appropriate for its difficulty level, and aligned with the specified marks.
+    Ensure each question is accurate, clear, non-repetitive, appropriate for its difficulty level.
 
     Generate exactly the requested number of questions and related to difficulty level.
     Return only the questions.
