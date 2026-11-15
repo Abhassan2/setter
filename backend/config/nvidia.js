@@ -37,7 +37,7 @@ const generate = async (data) => {
     });
 
     if(response.choices[0].message.content){
-      console.log("Task Done...");
+      console.log("Task Done");
       return response.choices[0].message.content;
     }
   } catch (error) {

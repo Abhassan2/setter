@@ -13,10 +13,9 @@ export const saveQuestions = async (req, res) => {
     }
 
     // Generate questions using AI
-    const questions = await geminiAi(req.body);
+    const questions = await generate(req.body);
     const result =
       typeof questions === "string" ? JSON.parse(questions) : questions;
-    console.log(result);
     
     const quesCollection = new Question({
       subject,

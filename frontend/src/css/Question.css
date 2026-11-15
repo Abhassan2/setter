@@ -37,7 +37,7 @@
 }
 
 .filters select:hover {
-  background: var(--accent);
+  background: var(--btn-bg-hover);
   color: var(--accent-contrast);
 }
 

@@ -73,7 +73,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background-color: var(--btn-bg-hover);
+  background: var(--btn-bg-hover);
   color: var(--btn-text-hover);
 }
 
@@ -146,7 +146,7 @@ button:disabled {
 }
 
 .loader-label {
-  color: #404142;
+  color: var(--text);
   font-size: 14px;
 }
 

@@ -148,7 +148,7 @@
 }
 
 .preview-action .clear-btn:hover {
-  background-color: var(--accent);
+  background-color: var(--btn-bg-hover);
   color: var(--accent-contrast);
   font-weight: 500;
 }

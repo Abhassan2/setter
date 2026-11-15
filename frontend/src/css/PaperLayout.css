@@ -105,7 +105,8 @@
   background: var(--bg-soft);
   font-size: 15px;
   line-height: 1.5;
-  border: 1px solid #e5e4e7;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
 }
 
 /* ================================

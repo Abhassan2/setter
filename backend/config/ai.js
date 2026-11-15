@@ -25,7 +25,7 @@ async function geminiAi(data) {
       model: "gemini-3.8-flash",
       input: prompt,
     });
-    console.log("Task done...");
+    console.log("Task Done");
     
     return interaction.output_text;
   } catch (error) {

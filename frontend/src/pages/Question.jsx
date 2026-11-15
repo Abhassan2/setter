@@ -106,7 +106,7 @@ export default function Question() {
         <p>Your previously generated history</p>
 
         <span className="question-count">
-          Total Questions: {filteredhistory?.length}
+          Total Questions: {history?.length}
         </span>
       </div>
 
